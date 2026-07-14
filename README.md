@@ -14,7 +14,7 @@
 
 **AIIS2 // AI SYSTEMS LAB** 是一个专注于智能系统的独立工程实验室。我关注的不只是模型能力，更是如何把智能体编排、本地数据系统、桌面与 Web 工程，以及最终交互体验组合成可靠、可用的产品。
 
-> Build the system, not just the demo.  
+> Build the system, not just the demo.<br>
 > 不只完成演示，更要构建真正可运行的系统。
 
 ## `CURRENT SIGNALS`
@@ -31,7 +31,7 @@
 
 ### `01 / DATELL`
 
-**A polished local-first AI analyst for interactive reporting.**  
+**A polished local-first AI analyst for interactive reporting.**<br>
 本地优先的 AI 数据分析工作台：连接文件与数据库，通过 ReAct 智能体完成分析、验证，并输出可交互、可导出的专业报告。
 
 `ReAct Agents` · `Electron` · `React` · `TypeScript` · `DuckDB` · `Local RAG`
@@ -42,7 +42,7 @@
 
 ### `02 / RISK AGENT`
 
-**A local-first coordinator/worker workspace for risk intelligence.**  
+**A local-first coordinator/worker workspace for risk intelligence.**<br>
 面向业务风险场景的本地分析系统，结合 Coordinator + Worker 智能体循环、结构化规则、知识与血缘视图，以及浏览器和 MCP 工具层。
 
 `Agent Orchestration` · `Fastify` · `WebSocket` · `React` · `Electron` · `SQLite`
@@ -53,7 +53,7 @@
 
 ### `03 / FRONTEND DESIGN REPORT`
 
-**An installable Agent Skill and visual-report MCP runtime.**  
+**An installable Agent Skill and visual-report MCP runtime.**<br>
 面向 Datell 风格视觉报告生成的 Agent Skill 与 MCP 运行时，包含布局、配色、卡片目录和经过验证的静态报告回退能力。
 
 `Agent Skills` · `MCP` · `HTML` · `Visual Systems` · `Report Runtime`
