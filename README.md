@@ -1,3 +1,5 @@
+<!-- AI Systems Lab GitHub profile -->
+
 <div align="center">
   <img src="assets/ai-systems-lab.gif" width="100%" alt="AIIS2 AI Systems Lab animated technology banner" />
   <br><br>
