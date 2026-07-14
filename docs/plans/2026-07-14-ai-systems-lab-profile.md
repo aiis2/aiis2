@@ -4,9 +4,9 @@
 
 **Goal:** Publish a bilingual, animated, technology-forward GitHub profile for `aiis2` under the AI Systems Lab identity.
 
-**Architecture:** A single GitHub Profile README references repository-hosted raster assets from `assets/`. A generated cinematic hero is converted into a small seamless animation with a strong static first frame, while all essential identity, project, and stack information remains accessible as Markdown text. A lightweight local verification script checks the README contract and media files before publishing.
+**Architecture:** A single GitHub Profile README references repository-hosted raster assets from `assets/`. A deterministic cinematic hero is built as a small seamless animation with a strong static first frame, while all essential identity, project, and stack information remains accessible as Markdown text. A lightweight local verification script checks the README contract and media files before publishing.
 
-**Tech Stack:** GitHub Markdown/HTML, OpenAI image generation, Python Pillow, GitHub CLI, Python standard-library validation.
+**Tech Stack:** GitHub Markdown/HTML, Python Pillow, GitHub CLI, Python standard-library validation. The visual pipeline can accept an Image 2 source later; the initial build is procedural because the local Image API key is unavailable.
 
 ---
 
@@ -73,17 +73,17 @@ git commit -m "test: define profile content contract"
 **Files:**
 - Create: `assets/ai-systems-lab-source.png`
 
-**Step 1: Invoke the image generation skill**
+**Step 1: Build the deterministic source**
 
-Use `@imagegen` to generate a wide, text-free cinematic scene with a black technical grid, luminous cyan data streams, electric-green signal accents, a central abstract AI core, precise glass-like interface traces, and clean negative space. Avoid people, logos, illegible pseudo-text, purple dominance, and stock-image styling.
+Use Pillow to create a wide, text-free cinematic scene with a black technical grid, luminous cyan data streams, electric-green signal accents, a central abstract AI core, precise interface traces, and clean negative space. Avoid people, logos, pseudo-text, purple dominance, and stock-image styling.
 
 **Step 2: Inspect the generated source**
 
 Render or view the source at original detail. Verify that it is nonblank, has a clear focal point, has safe dark space for exact typography, and contains no malformed text.
 
-**Step 3: Save the selected source**
+**Step 3: Save the source**
 
-Copy the selected generated image to `assets/ai-systems-lab-source.png` without recompressing it.
+Write the full-resolution source to `assets/ai-systems-lab-source.png` before applying motion or typography.
 
 **Step 4: Commit the source**
 
