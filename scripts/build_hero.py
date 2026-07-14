@@ -4,15 +4,16 @@ import math
 import random
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 
 ROOT = Path(__file__).parents[1]
 ASSETS = ROOT / "assets"
 SOURCE = ASSETS / "ai-systems-lab-source.png"
+IMAGE2_SOURCE = ASSETS / "ai-systems-lab-image2-source.png"
 OUTPUT = ASSETS / "ai-systems-lab.gif"
 WIDTH, HEIGHT = 1200, 420
-CORE = (942, 208)
+CORE = (895, 208)
 FRAMES = 24
 
 
@@ -54,6 +55,17 @@ def glow_ellipse(
 
 
 def build_source() -> Image.Image:
+    if IMAGE2_SOURCE.exists():
+        with Image.open(IMAGE2_SOURCE) as generated:
+            image = ImageOps.fit(
+                generated.convert("RGB"),
+                (WIDTH, HEIGHT),
+                method=Image.Resampling.LANCZOS,
+                centering=(0.5, 0.5),
+            ).convert("RGBA")
+        image.convert("RGB").save(SOURCE, optimize=True)
+        return image
+
     rng = random.Random(20260714)
     image = Image.new("RGBA", (WIDTH, HEIGHT), (2, 7, 12, 255))
     draw = ImageDraw.Draw(image, "RGBA")
@@ -138,7 +150,7 @@ def overlay_identity(frame: Image.Image) -> None:
     draw.text((70, 250), "全栈 AI 工程 · 智能系统实验室", font=load_font(18, cjk=True), fill=muted)
     draw.ellipse((71, 315, 79, 323), fill=green)
     draw.text((91, 307), "SYSTEM ONLINE", font=load_font(14, mono=True), fill=green)
-    draw.text((245, 307), "SHANGHAI  /  2026", font=load_font(14, mono=True), fill=muted)
+    draw.text((245, 307), "LOCAL FIRST  /  2026", font=load_font(14, mono=True), fill=muted)
 
     draw.text((70, 363), "BUILDING SIGNALS FROM DATA TO EXPERIENCE", font=load_font(12, mono=True), fill=(86, 151, 164, 220))
     draw.text((1040, 363), "02:AI", font=load_font(12, mono=True), fill=(74, 229, 255, 210))
