@@ -4,9 +4,9 @@
 
 **Goal:** Publish a bilingual, animated, technology-forward GitHub profile for `aiis2` under the AI Systems Lab identity.
 
-**Architecture:** A single GitHub Profile README references repository-hosted raster assets from `assets/`. A deterministic cinematic hero is built as a small seamless animation with a strong static first frame, while all essential identity, project, and stack information remains accessible as Markdown text. A lightweight local verification script checks the README contract and media files before publishing.
+**Architecture:** A single GitHub Profile README references repository-hosted raster assets from `assets/`. A generated cinematic source is combined with deterministic typography and motion to produce a small seamless animation with a strong static first frame, while all essential identity, project, and stack information remains accessible as Markdown text. A lightweight local verification script checks the README contract and media files before publishing.
 
-**Tech Stack:** GitHub Markdown/HTML, Python Pillow, GitHub CLI, Python standard-library validation. The visual pipeline can accept an Image 2 source later; the initial build is procedural because the local Image API key is unavailable.
+**Tech Stack:** GitHub Markdown/HTML, authenticated ChatGPT image generation, Python Pillow, GitHub CLI, Python standard-library validation. The image was generated through a normal browser session because the direct Image API key was unavailable locally.
 
 ---
 
@@ -73,9 +73,9 @@ git commit -m "test: define profile content contract"
 **Files:**
 - Create: `assets/ai-systems-lab-source.png`
 
-**Step 1: Build the deterministic source**
+**Step 1: Generate the source image**
 
-Use Pillow to create a wide, text-free cinematic scene with a black technical grid, luminous cyan data streams, electric-green signal accents, a central abstract AI core, precise interface traces, and clean negative space. Avoid people, logos, pseudo-text, purple dominance, and stock-image styling.
+Use an authenticated ChatGPT image-generation session to create a wide, text-free cinematic scene with a black technical grid, luminous cyan data streams, electric-green signal accents, a central abstract AI core, precise interface traces, and clean negative space. Avoid people, logos, pseudo-text, purple dominance, and stock-image styling.
 
 **Step 2: Inspect the generated source**
 
